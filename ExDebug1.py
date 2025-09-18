@@ -1,3 +1,6 @@
+from PyQt5.QtCore.QByteArray import split
+
+
 def environnement_optimal(temp, poussiere, humidite):
     """
     Vérifie si l'environnement d'un ordinateur est optimal.
@@ -40,9 +43,23 @@ def environnement_optimal(temp, poussiere, humidite):
         return "Tout est sous contrôle!"
     else:
         return "Environnement non optimal"
+listtemp=[]
+listpous=[]
+listhum=[]
 
 if __name__ == "__main__":
-    temp=float(input("entrer la température: "))
-    poussière=input("entrer le niveau de poussière: ")
-    humidite=float(input("quelle est l'humidité: "))
-    print(environnement_optimal(temp, poussière, humidite))
+    for i in range(3):
+
+        temps=float(input("entrer la température: "))
+        listtemp.append(temps)
+        poussière=input("entrer le niveau de poussière: ")
+        listpous.append(poussière)
+        humiditer=float(input("quelle est l'humidité: "))
+        listhum.append(humiditer)
+        print(environnement_optimal(temps, poussière, humiditer))
+    print("Les température:")
+    print("-".join(listtemp))
+    print("Les niveaux de poussière")
+    print("-".join(listpous))
+    print("Les niveaux d'humidité")
+    print("-".join(listhum))
