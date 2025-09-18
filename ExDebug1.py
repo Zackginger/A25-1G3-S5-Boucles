@@ -52,13 +52,13 @@ if __name__ == "__main__":
         while True:
             try:
                 temps=float(input("entrer la température: "))
-                if temps :
+                poussière = input("entrer le niveau de poussière: ")
+                humiditer = float(input("quelle est l'humidité: "))
+                if temps<0 and humiditer<0 and poussière != "moyen" and poussière != "faible" and poussière !="élevé":
                     listtemp.append(temps)
+                    listpous.append(poussière)
+                    listhum.append(humiditer)
                     break
-                poussière=input("entrer le niveau de poussière: ")
-                listpous.append(poussière)
-                humiditer=float(input("quelle est l'humidité: "))
-                listhum.append(humiditer)
             except:
                 print("😡😡😡not a valid anwser😡😡😡")
         print(environnement_optimal(temps, poussière, humiditer))
