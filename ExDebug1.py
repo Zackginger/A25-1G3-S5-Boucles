@@ -1,4 +1,4 @@
-from PyQt5.QtCore.QByteArray import split
+
 
 
 def environnement_optimal(temp, poussiere, humidite):
@@ -49,13 +49,18 @@ listhum=[]
 
 if __name__ == "__main__":
     for i in range(3):
-
-        temps=float(input("entrer la température: "))
-        listtemp.append(temps)
-        poussière=input("entrer le niveau de poussière: ")
-        listpous.append(poussière)
-        humiditer=float(input("quelle est l'humidité: "))
-        listhum.append(humiditer)
+        while True:
+            try:
+                temps=float(input("entrer la température: "))
+                if temps :
+                    listtemp.append(temps)
+                    break
+                poussière=input("entrer le niveau de poussière: ")
+                listpous.append(poussière)
+                humiditer=float(input("quelle est l'humidité: "))
+                listhum.append(humiditer)
+            except:
+                print("😡😡😡not a valid anwser😡😡😡")
         print(environnement_optimal(temps, poussière, humiditer))
     print("Les température:")
     print("-".join(listtemp))
