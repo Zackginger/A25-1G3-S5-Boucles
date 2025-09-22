@@ -1,7 +1,7 @@
 
 
 
-def environnement_optimal(temp, poussiere, humidite):
+def environnement_optimal(temperature, poussiere, humidite):
     """
     Vérifie si l'environnement d'un ordinateur est optimal.
 
@@ -18,10 +18,10 @@ def environnement_optimal(temp, poussiere, humidite):
     alerte = False
 
     # Vérification température
-    if temp < 18:
+    if temperature < 18:
         print("Température trop basse")
         alerte = True
-    elif temp > 27:
+    elif temperature > 27:
         print("Température trop élevée")
         alerte = True
 
